@@ -1,0 +1,21 @@
+<section class="content">
+    <div>
+      <div class="dashboard-thumbnail">
+        <ul>
+            <li class="active" *ngIf="dashboardSelected.src">
+              <img class="widget-img" src="{{dashboardSelected.src}}">
+              <div class="widget-footer">{{dashboardSelected.title}}</div>
+            </li>
+            <li *ngFor="let dashboard of dashboards" (click)="dashboardPicked(dashboard)">
+              <img class="widget-img" src="{{dashboard.src}}">
+              <div class="widget-footer">{{dashboard.title}}</div>
+            </li>
+        </ul>
+      </div>
+      <div class="feedback-forms">
+        <app-feedback-form></app-feedback-form>
+      </div>
+    </div>
+</section>
+
+

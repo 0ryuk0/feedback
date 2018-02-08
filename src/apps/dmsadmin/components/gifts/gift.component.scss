@@ -1,0 +1,12 @@
+.name-disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+    color:grey;
+}
+.widget-picker{
+    float:right;
+    width: 216px; 
+    margin-bottom: 0;
+    font-size: 13px;
+}

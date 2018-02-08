@@ -1,0 +1,24 @@
+<div class="feedback-form-main">
+  <h3>{{questions.formTitle}}</h3>
+  <form name="cateringForm">
+    <ul>
+      <li *ngFor="let $i=index;let question of questions.range">
+        <p>{{$i}} {{question.text}}</p>
+        <div class="range-bar">
+          <input type="range" name="qc{{$i}}" id="qc{{$i}}" value="2" min="1" max="5" >
+          <output name="output_qc{{$i}}" id="output_qc{{$i}}">qc{{$i}}.value</output>
+        </div>
+      </li>
+      <li *ngFor="let $i=index;let question of questions.commentBox">
+        <p>{{question.text}}</p>
+        <div class="range-bar">
+          <textarea name="feedback" rows="10" cols="30"></textarea>
+        </div>
+      </li>
+      <input type="submit">
+    </ul>
+  </form>
+  
+</div>
+
+

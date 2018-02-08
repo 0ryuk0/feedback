@@ -1,0 +1,31 @@
+.dashboard-thumbnail{
+    width: 100px;
+    float: left;
+    ul{
+        list-style: none;
+        padding:0;
+        .active{
+            border: 1px solid #0093b4;
+            padding: 10px;
+            border-radius: 2px;
+            img{
+                width:77px;
+            }
+        }
+        li{
+            img{
+                width: 94px;
+            }
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.feedback-forms{
+    width: calc(100% - 100px);
+    height: 100vh;
+    background-color: #fff;
+    margin-left: 125px;
+}
