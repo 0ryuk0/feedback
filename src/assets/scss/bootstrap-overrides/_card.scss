@@ -1,0 +1,122 @@
+.card {
+    box-shadow: $card-shadow;
+    margin-bottom: $grid-gutter-width-base;
+
+    &:not([class*="card-outline-"]) {
+        border: 1px solid #eaeaeb;
+    }
+}
+
+[class*="card-outline-"] {
+  background-color: $white;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.card-subtitle {
+  color: $text-muted;
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.card-header {
+  position: relative;
+
+  & + .card-block {
+    padding-top: 0;
+  }
+
+  & + .d-card-block {
+    padding: 1rem !important;
+    min-height: 200px;
+    height: auto;
+
+    & > .d-card-block-desc {
+      min-height: 100px;
+      height: auto;
+    }
+
+    & > .d-card-block-pills {
+      height: 50%;
+      & > div {
+        padding: 0.2rem 0.2rem 0.2rem 0;
+        display: inline-block;
+      }
+    }
+  }
+
+  .btn--float {
+    right: 25px;
+    bottom: -23px;
+    z-index: 1;
+  }
+}
+
+.card > .actions,
+.card-header .actions {
+  position: absolute;
+  right: 15px;
+  z-index: 2;
+  top: 18px;
+}
+
+[class*="card-img"] {
+  width: 100%;
+}
+
+.card-inverse {
+  .card-link,
+  .card-text,
+  .card-subtitle,
+  .card-blockquote .blockquote-footer {
+    color: rgba($white, 0.85);
+  }
+
+  .card-header,
+  .card-footer {
+    border-color: transparent;
+  }
+}
+
+.card-link {
+  text-transform: uppercase;
+  font-size: 0.98rem;
+  color: $headings-color;
+  font-weight: 500;
+
+  &:hover {
+    color: lighten($headings-color, 10%);
+  }
+}
+
+.d-card-header {
+    padding: 1rem !important;
+    border-bottom: 1px solid #eaeaeb !important;
+}
+
+.card-footer {
+  padding-top: 0;
+}
+
+.d-card-footer {
+    padding: 1rem !important;
+    border-top: 1px solid #eaeaeb !important;
+}
+
+.card-block {
+  p:only-child {
+    margin-bottom: 0;
+  }
+}
+
+.card-block__title {
+  font-size: 1.1rem;
+  color: $headings-color;
+  margin-bottom: 0.6rem;
+  font-weight: normal;
+}
