@@ -1,0 +1,270 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5DD61E1-E49D-4A18-8917-60BA756D8D4C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Portal.Support.ClientApps</RootNamespace>
+    <AssemblyName>Portal.Support.ClientApps</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="src\apps\dmsadmin\components\dashboard\dashboard.edit.component.html" />
+    <Content Include="src\apps\dmsadmin\components\dashboard\dashboard.home.component.html" />
+    <Content Include="src\apps\dmsadmin\components\package-manager\package-manager.component.html" />
+    <Content Include="src\apps\dmsadmin\components\widget\widget.edit.component.html" />
+    <Content Include="src\apps\dmsadmin\components\widget\widget.home.component.html" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Bold-webfont.eot" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Bold-webfont.ttf" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Bold-webfont.woff" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Light-webfont.eot" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Light-webfont.ttf" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Light-webfont.woff" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="src\assets\scss\bootstrap-imports\_bootstrap-imports.scss" />
+    <Content Include="src\assets\scss\bootstrap-imports\_mixins.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_accordion.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_alerts.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_breadcrumbs.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_buttons.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_card.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_carousel.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_close.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_custom-forms.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_datepicker.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_dropdown.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_forms.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_input-groups.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_media.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_modal.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_pagination.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_popovers.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_progress.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_ratings.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_sortable.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_tables.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_tabs.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_timepicker.scss" />
+    <Content Include="src\assets\scss\bootstrap-overrides\_tooltip.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_angular2-color-picker.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_dropzone.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_easypiecharts.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_flot.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_nouislider.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_perfect-scrollbar.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_select2.scss" />
+    <Content Include="src\assets\scss\vendor-overrides\_sparklines.scss" />
+    <Content Include="src\assets\scss\_base.scss" />
+    <Content Include="src\assets\scss\_charts.scss" />
+    <Content Include="src\assets\scss\_fonts.scss" />
+    <Content Include="src\assets\scss\_generics.scss" />
+    <Content Include="src\assets\scss\_inner-imports.scss" />
+    <Content Include="src\assets\scss\_layout.scss" />
+    <Content Include="src\assets\scss\_listview.scss" />
+    <Content Include="src\assets\scss\_misc.scss" />
+    <Content Include="src\assets\scss\_mixins.scss" />
+    <Content Include="src\assets\scss\_page-loader.scss" />
+    <Content Include="src\assets\scss\_theme.scss" />
+    <Content Include="src\assets\scss\_toggle-switch.scss" />
+    <Content Include="src\assets\scss\_variables.scss" />
+    <Content Include="src\assets\vendors\bower_components\flot.curvedlines\.bower.json" />
+    <Content Include="src\assets\vendors\bower_components\flot.curvedlines\bower.json" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\.bower.json" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\package.json" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\README.md" />
+    <Content Include="src\shared\components\datepicker\datepicker.component.html" />
+    <Content Include="src\shared\components\header\header.component.html" />
+    <Content Include="src\shared\components\navbar\navbar.component.html" />
+    <Content Include="src\shared\components\package-source\package-source.component.html" />
+    <Content Include="src\shared\components\root\app.component.html" />
+    <Content Include="src\styles.scss" />
+    <Content Include="src\tsconfig.json" />
+    <Content Include="angular-cli.json" />
+    <Content Include="package.json" />
+    <Content Include="tslint.json" />
+    <Content Include="src\shared\components\datepicker\datepicker.component.scss" />
+    <Content Include="src\shared\components\header\header.component.scss" />
+    <Content Include="src\shared\components\navbar\navbar.component.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\assets\fonts\roboto\Roboto-Bold-webfont.svg" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Light-webfont.svg" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Medium-webfont.svg" />
+    <Content Include="src\assets\fonts\roboto\Roboto-Regular-webfont.svg" />
+    <Content Include="src\assets\vendors\bower_components\flot.curvedlines\curvedLines.js" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\examples\index.html" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\examples\js\flot\flot.js" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\examples\js\flot\stack.js" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\examples\js\main.js" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\examples\js\vendor\jquery-1.9.1.min.js" />
+    <Content Include="src\assets\vendors\bower_components\flot.orderbars\js\jquery.flot.orderBars.js" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--<TypeScriptCompile Include="src\apps\app\app.barrel.ts" />-->
+    <TypeScriptCompile Include="src\apps\app\app.module.ts" />
+    <TypeScriptCompile Include="src\apps\app\app.routing.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\components\dashboard\dashboard.edit.component.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\components\dashboard\dashboard.home.component.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\components\package-manager\package-manager.component.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\components\widget\widget.edit.component.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\components\widget\widget.home.component.ts" />
+    <!--<TypeScriptCompile Include="src\apps\dmsadmin\dmsadmin.barrel.ts" />-->
+    <TypeScriptCompile Include="src\apps\dmsadmin\dmsadmin.module.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\dmsadmin.routing.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\dashboard.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\dashboarddetail.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\extendedsettings.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\mapping.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\parameter.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\savedata.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\widget.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\widgetdetail.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\widgetpackage.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\model\widgetpackageupload.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\services\alert.service.ts" />
+    <TypeScriptCompile Include="src\apps\dmsadmin\services\dmsadmin.service.ts" />
+    <TypeScriptCompile Include="src\environments\environment.qc.ts" />
+    <TypeScriptCompile Include="src\environments\environment.devint.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main-dmsadmin.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\shared\components\datepicker\datepicker.component.ts" />
+    <TypeScriptCompile Include="src\shared\components\datepicker\datepicker.module.ts" />
+    <TypeScriptCompile Include="src\shared\components\header\header.component.ts" />
+    <TypeScriptCompile Include="src\shared\components\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="src\shared\components\package-source\package-source.component.ts" />
+    <TypeScriptCompile Include="src\shared\components\root\app.component.ts" />
+    <TypeScriptCompile Include="src\shared\directives\dropzone\dropzone.directive.ts" />
+    <TypeScriptCompile Include="src\shared\model\selectoptions.ts" />
+    <TypeScriptCompile Include="src\shared\services\shared.service.ts" />
+    <TypeScriptCompile Include="src\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>^cd "..\" &amp;&amp; node.exe node_modules\@angular\cli\bin\ng build --base-href /support/dms/ &amp;&amp; copy "web.config" "dist"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
