@@ -1,0 +1,59 @@
+
+<div class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="clearfix nav-view-xs">
+    <button (click)="isCollapsed = !isCollapsed"
+      class="navbar-toggler pull-xs-right hidden-sm-up" type="button"
+      aria-controls="bd-main-nav"
+      aria-label="Toggle navigation">
+        {{menuIcon}}
+    </button>
+
+    <h1> <a (click)="isCollapsed = true" class="navbar-brand hidden-sm-up">
+      <img (click)="isCollapsed = !isCollapsed" src="assets/images/logo.png" />
+      Feedback Portal
+    </a></h1>
+  </div>
+  <div class="navbar-toggleable-xs navbar-collapse" id="bd-main-nav"
+   [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}">
+    <ul class="nav navbar-nav">
+      <li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
+        <h1><a class="navbar-brand hidden-xs-down">
+          <img  (click)="isCollapsed = !isCollapsed" src="assets/images/logo.jpg" />
+          Feedback Portal
+        </a></h1>
+      </li>
+      <li (click)="isCollapsed = true" *ngFor="let menuItem of menuItems"
+        class="nav-item" routerLinkActive="active">
+        <a class="nav-item nav-link" [routerLink]="[menuItem.path]" routerLinkActive="active">{{menuItem?.title}}</a>
+      </li>
+       <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>-->
+      <li class="nav-item environment-dropdown" *ngIf="appTitle == 'DMS Admin'">
+        <select [(ngModel)]="selectedEnv" class="custom-select" (ngModelChange)="switchEnvironment(selectedEnv)">
+          <option *ngFor="let env of environmentOptions" [ngValue]="env">
+            {{env.displayValue}}
+          </option>
+          <!--<option selected>
+            Connect to Local
+          </option>
+          <option>
+            Connect to QC
+          </option>
+          <option>
+            Connect to Devint
+          </option>-->
+        </select>
+      </li>
+       <!--<select2 [data]="environmentOptions | async" [options]="selectOptions" [value]="selectedData | async"  (valueChanged)="onEnvironmentChanged($event)"></select2>-->
+    </ul>
+  </div>
+</div>
+

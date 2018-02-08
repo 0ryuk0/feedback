@@ -1,0 +1,12 @@
+<div>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+    <div class="form-group">
+        <input type="text" value="{{ getDate() | date:'dd/MM/yyyy'}}" class="form-control" (click)="toggleDatePicker()" />
+    </div>
+  </div>
+  <div class="datepicker--popup" [class.datepicker--toggled]="datePickerToggle">
+    <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" [maxDate]="maxDateValue" class="datepicker" (selectionDone)="onSelectionDone($event)"></datepicker>
+  </div>
+</div>
+       

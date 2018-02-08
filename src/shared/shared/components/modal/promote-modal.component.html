@@ -1,0 +1,152 @@
+<div *ngIf="visible" class="dialog">
+  <div class="dialog-header">
+    <h3 class="dialog-header-text">{{headerText}}  
+    </h3>
+    <button *ngIf="closable" title="Close" (click)="close()" aria-label="Close" class="dialog-close-btn">x</button>
+  </div>
+  <!--<mat-progress-bar class="example-margin"  [color]="color" [mode]="mode"  [value]="value" [bufferValue]="bufferValue">
+  </mat-progress-bar>-->
+    <div *ngIf="isDashboard" class="dialog-body">
+      <section id="dashboardMetadata" *ngIf="dashboardSec.isDashboardMetadata">
+        <h5> 
+          {{data.dashboard.Name}} Details
+          <span *ngIf="isShowCreateLoader" class="progress-icon"><img src="assets/images/spinner.gif" /></span>
+        </h5> <span class="error">{{createError}}</span>
+        <hr>
+        <!--<div class="metadata-table">
+          <div class="row">
+            <div class="col-xs-3 col-sm-2 col-lg-2 col-md-2">
+              Description
+            </div>
+            <div class="col-xs-9 col-sm-10 col-lg-10 col-md-10">
+              {{data.dashboard.Description}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-sm-2 col-lg-2 col-md-2">
+              Render Type
+            </div>
+            <div class="col-xs-9 col-sm-10 col-lg-10 col-md-10">
+              {{data.dashboard.RenderType}}
+            </div>
+          </div>
+          <div class="row" *ngIf="data.dashboard.RenderType == '2'">
+            <div class="col-xs-3 col-sm-2 col-lg-2 col-md-2">
+              Widget Name
+            </div>
+            <div class="col-xs-9 col-sm-10 col-lg-10 col-md-10">
+              {{data.dashboard.WidgetName}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-sm-2 col-lg-2 col-md-2">
+              Using Mock Api
+            </div>
+            <div class="col-xs-9 col-sm-10 col-lg-10 col-md-10">
+              {{data.dashboard.UseMockApi}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-sm-2 col-lg-2 col-md-2">
+              Widgets
+            </div>
+            <div class="col-xs-9 col-sm-10 col-lg-10 col-md-10">
+              <span class="badge badge-pill badge-primary widget-pill" *ngFor="let widget of data.widgets">
+                <i class="zmdi zmdi-circle"> </i> {{widget.DisplayName}}
+              </span>
+            </div>
+          </div>
+        </div>-->
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header d-card-header">
+                    <h2 class="card-title">{{data.dashboard.Name}}</h2>
+                </div>
+
+                <div class="card-block d-card-block">
+                    <div class="d-card-block-desc">
+                        <p>{{data.dashboard.Description}}</p>
+                    </div>
+                    <div class="d-card-block-pills">
+                        <div *ngFor="let widget of data.widgets">
+                            <span class="badge badge-pill badge-primary">{{widget.DisplayName}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer d-card-footer">
+                    <small class="card-subtitle float-left">Last Modified :</small>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <!--<p><span>Description:</span> {{data.dashboard.Description}} </p>
+        <p><span>Layout Type:</span> {{data.dashboard.LayoutType}} </p>
+        <p><span>Using Mock Api: </span>{{data.dashboard.UseMockApi}} </p>-->
+        <!--<p><span>Created by: </span> {{data.dashboard.CreatedByName}}</p>
+        <p><span>Created on: </span>{{data.dashboard.CreatedDateTime}} </p>
+        <p><span>Last Updated by: </span> {{data.dashboard.UpdatedByName}}</p>
+        <p><span>Last Updated on: </span> {{data.dashboard.UpdatedDateTime}} </p>-->
+
+        <!--<p> <span> Widgets: </span> 
+          <span class="badge badge-pill badge-primary widget-pill" *ngFor="let widget of data.widgets">
+            <i class="zmdi zmdi-circle"> </i> {{widget.DisplayName}}
+          </span>
+        </p>-->
+
+        <!--<p> <span> Dashboard Extended Settings: </span>
+            <span class="badge badge-pill badge-primary widget-pill" *ngFor="let ext of data.dashboardExtendedSettings">
+              <i class="zmdi zmdi-circle"> </i> {{ext.Key}} |  {{ext.Value}} 
+            </span>
+        </p>-->
+      </section>
+
+      <section id="widgetPackages" class="row" *ngIf="dashboardSec.isPackageDetails">
+        <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+          <h5> {{data.dashboard.Name}} : Upload Packages </h5>
+          <hr>
+        </div>
+        <div class="col-xs-5 col-md-5 col-sm-5 col-lg-5 widgetHolder card" [class.disabled]="widget.isShowSpinner" *ngFor="let $index, let widget of data.widgets" (click)="toggleWidgetSelection(widget)">
+          <div class="widgetCard">
+            <h5>{{widget.DisplayName}} 
+              <span *ngIf="widget.isShowSpinner" class="progress-icon"><img src="assets/images/spinner.gif" /></span>
+              <span *ngIf="widget.isShowRetry" class="error float-right" (click)="processPackage(widget, $index, true, $event)" data-toggle="tooltip" data-placement="top" title="Retry"><i class="zmdi zmdi-alert-octagon"></i></span>
+              <span *ngIf="widget.isDone" class="upload_done float-right"><i class="zmdi zmdi-case-check"></i></span>
+              <span *ngIf="widget.notIncluded" class="error float-right"><i class="zmdi zmdi-block"></i></span>
+            </h5>
+            <p><span>Entitlement Code:  </span> {{widget.EntitlementCode}}</p>
+            <p><span>Description:  </span> {{widget.Description}}</p>
+            <p><span>Current Version:  </span> <u>{{widget.PackageVersion}}</u></p>
+            <p><span>Source Type:  </span> <u>{{widget.PackageSourceType}}</u></p>
+          </div>
+        </div>
+      </section>
+
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="isWidget" class="dialog-body">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="dialog-footer">
+      <ul *ngIf="dashboardSec.isDashboardMetadata">
+        <li (click) = "dialogAction('dashboard', 'dashboardMetadata')" [class.disabled]="isShowCreateLoader">
+          Promote
+        </li>
+      </ul>
+      <ul *ngIf="dashboardSec.isPackageDetails">
+        <li (click) = "dialogAction('dashboard', 'packageDetails')">
+          {{uploadBtnText}}
+        </li>
+        <!--<li (click) = "dialogAction('previous', 'dashboard', 'n3a')" >
+          Previous
+        </li>-->
+      </ul>
+    </div>
+
+</div>
+
+<div *ngIf="visible" class="overlay" (click)="close()" [class.disabled] = "disabled"></div>

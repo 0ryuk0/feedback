@@ -1,0 +1,17 @@
+.not-found-dms{
+    width: 100%;
+    text-align: center;
+    font-size: 21px;
+    margin-top: 13%;
+    p{
+        font-size: 15px;
+    }
+}
+
+.btn-not-found{
+    background-color: #ea7820;
+    color: #ffffff;
+    &:hover{
+        background-color: #fa8a33;
+    }
+}
